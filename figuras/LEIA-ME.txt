@@ -1,0 +1,2 @@
+Armazene aqui figuras em PDF, PNG, JPG ou SVG convertido para PDF.
+Prefira PDF para gráficos e diagramas vetoriais e PNG/JPG para fotografias.

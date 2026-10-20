@@ -1,0 +1,395 @@
+% Template LaTeX para TCC de graduação da UNIPAMPA — V2
+% Copyright (c) 2026 Charles Quevedo Carpes.
+% Autoria das contribuições próprias, organização e adaptações do template.
+% This work may be distributed and/or modified under the conditions of the
+% LaTeX Project Public License, version 1.3c or (at your option) any later version.
+% License: https://www.latex-project.org/lppl/lppl-1-3c.txt (see LICENSE).
+% This work has the LPPL maintenance status `author-maintained'.
+% The Current Maintainer of this work is Charles Quevedo Carpes.
+% Consulte AUTORIA.md para escopo, créditos e relação dos arquivos.
+
+% EXEMPLOS PARA DEMONSTRAÇÃO DE FORMATAÇÃO — BASE COMENTADA
+% Seguimos o Manual de normalização de referências da UNIPAMPA (2025).
+% Dados e chaves da base enviada foram mantidos; não são fontes verificadas.
+% Alguns exemplos reproduzem obras do manual e outros são fictícios.
+% Não citar estes registros em trabalhos reais sem conferir os documentos.
+%
+% IMPORTANTE: o manual classifica documentos, não define comandos BibTeX.
+% book, article etc. são a implementação desses modelos no nosso .bst.
+% monography e legislation dependem do estilo personalizado unipampa-alf.bst.
+
+% ORIENTAÇÕES GERAIS
+
+% - As chaves externas delimitam campos. Chaves internas ainda podem proteger
+%   siglas/nomes próprios da mudança de caixa: {UFSM}, {Python}, {HVOF}.
+% - Separe autores com and. "and others" representa a abreviação por et al.
+% - Use URL do documento consultado e sua data de acesso; não invente DOI.
+% - Título/subtítulo do livro usam campos separados.
+% - Acentos podem ser usados normalmente mas caracteres especiais precisam de escapes: escreva \&.
+% - Somente obras citadas aparecem normalmente na lista. Para conferir toda a
+%   base em um documento de teste, use \nocite{*}; retire-o do trabalho final.
+
+%*********** Cada referência foi inserida para você ter um modelo ***********
+
+
+% LIVRO CONSULTADO ONLINE, SEM LOCAL DE PUBLICAÇÃO IDENTIFICADO.
+% Use book para o livro completo; informe url e urlaccessdate quando online.
+% O local não identificado é indicado por [S. l.]; não significa autoria desconhecida.
+
+@book{alves2000,
+  author        = {Castro Alves},
+  title         = {Navio negreiro},
+  address       = {\textit{[S. l.]}},
+  publisher     = {Virtual Books},
+  year          = {2000},
+  url           = {http://www.terra.com.br/virtualbooks/freebook/port/Lport2/navionegreiro.htm},
+  urlaccessdate = {10 jan. 2002}
+}
+
+% NORMA TÉCNICA, COM AUTORIA INSTITUCIONAL (ABNT).
+% Modelo para normas ABNT, ISO, IEC etc., com identificação e título da norma.
+
+@manual{abnt14724,
+  organization  = {Associação Brasileira de Normas Técnicas},
+  org-short     = {ABNT},
+  title         = {NBR 14724: informação e documentação: trabalhos acadêmicos: apresentação},
+  address       = {Rio de Janeiro},
+  publisher     = {ABNT},
+  year          = {2024}
+}
+
+% LIVRO COM QUATRO OU MAIS AUTORES, REPRESENTADOS PELO PRIMEIRO E ET AL.
+% Use "and others" somente para representar outros autores que realmente existam.
+% O subtítulo fica em subtitle, separado do título principal.
+
+@book{bailona2006,
+  author        = {Baltazar Agenor Bailona and others},
+  title         = {Análise de tensões em tubulações industriais},
+  subtitle = {para engenheiros e projetistas},
+  address       = {Rio de Janeiro},
+  publisher     = {LTC},
+  year          = {2006}
+}
+
+% LEGISLAÇÃO PUBLICADA NO DIÁRIO OFICIAL: DECRETO-LEI.
+% Use para um ato legal cujo veículo de publicação seja o Diário Oficial.
+% legislation é uma extensão do nosso .bst; não é um tipo padrão do BibTeX.
+% Informe journal, data de publicação, seção/parte e páginas quando existentes.
+
+@legislation{brasil1988,
+  organization = {Brasil},
+  title        = {Decreto-lei nº 2.481, de 3 de outubro de 1988},
+  journal      = {Diário Oficial [da] República Federativa do Brasil},
+  address      = {Brasília, DF},
+  volume       = {126},
+  number       = {190},
+  month        = {4 out.},
+  year         = {1988},
+  section      = {Seção 1, parte 1},
+  pages        = {19291-19292}
+}
+
+% LEGISLAÇÃO CONSULTADA EM PORTAL OFICIAL: LEI ONLINE.
+% Informe jurisdição, epígrafe, ementa e dados da publicação.
+% misc é a implementação atual deste exemplo, não a categoria normativa.
+% Substitua a página inicial do portal pela URL específica da lei em trabalhos reais.
+% ATENÇÃO: subtitle é usado aqui para a ementa; a redação/capitalização e a separação
+% por ponto devem ser conferidas, pois o estilo o trata como subtítulo após dois-pontos.
+% Não troque automaticamente para legislation: sua função atual foi feita para
+% publicação em periódico oficial e ainda não imprime publisher.
+@misc{brasil2024,
+  organization  = {Brasil},
+  title         = {Lei nº 14.874, de 28 de maio de 2024},
+  subtitle      = {Dispõe sobre a pesquisa com seres humanos e institui o Sistema Nacional de Ética em Pesquisa com Seres Humanos},
+  address       = {Brasília, DF},
+  year          = {2024},
+  url           = {https://www.planalto.gov.br/},
+  urlaccessdate = {10 jul. 2026}
+}
+
+% CAPÍTULO DE LIVRO COM AUTOR PRÓPRIO, EM OBRA ORGANIZADA/EDITADA.
+% Use incollection: author/title identificam o capítulo; editor/booktitle, o livro.
+% Informe as páginas do capítulo; booksubtitle contém o subtítulo do livro.
+% Manual: 5.3 (p. 38). O exemplo do manual identifica Silveira como organizadora.
+% ATENÇÃO: para indicar organizador(a), acrescente editortype = {org.}; no estilo
+% atual, editor sem editortype é apresentado como (Ed.). Os dados foram preservados.
+@incollection{cassol2003,
+  author        = {Glória Barbosa Cassol},
+  title         = {Assessoria no {Centro de Educação da UFSM}: uma atividade dispensável?},
+  booktitle     = {Práticas, identidade e memória},
+  booksubtitle = {30 anos de {Relações Públicas na UFSM}},
+  editor        = {Ada Cristina Machado da Silveira},
+  editortype = {Org.},
+  address       = {Santa Maria},
+  publisher     = {FACOS-UFSM},
+  year          = {2003},
+  pages         = {183--190}
+}
+
+% TRABALHO EM ANAIS DE EVENTO CONSULTADOS ONLINE.
+% Use inproceedings para um trabalho individual, e não para os anais completos.
+% organization identifica o evento; conference-number/year/location, edição/ano/local;
+% booktitle identifica os anais; address/publisher/year identificam a publicação.
+% Informe DOI se existir, além da URL e data de acesso. A URL deste exemplo é fictícia.
+
+@inproceedings{evento2024,
+  author        = {Rafael Costa and Luiza Martins},
+  title         = {Automação de processos acadêmicos com software livre},
+  organization = {Congresso Brasileiro de Informática na Educação},
+  conference-number = {35},
+  conference-year = {2024},
+  conference-location = {Brasília},
+  booktitle = {Anais do Congresso Brasileiro de Informática na Educação},
+  address       = {Brasília, DF},
+  publisher     = {Sociedade Brasileira de Computação},
+  year          = {2024},
+  pages         = {210--219},
+  url           = {https://example.org/anais},
+  urlaccessdate = {10 jul. 2026}
+}
+
+% TRABALHO DE CONCLUSÃO DE CURSO (TCC) DISPONÍVEL EM REPOSITÓRIO ONLINE.
+% Use monography, extensão reconhecida pelo nosso estilo; indique tipo, grau e curso
+% em type, instituição/campus em school e orientador em advisor, se informado.
+% ATENÇÃO: o estilo atual repete year no início e no fim; depósito e defesa em anos
+% diferentes exigem adaptação, pois o campo year-presented não é usado nessa função.
+@monography{courtes2018,
+  author        = {Rafael Alves Courtes},
+  title         = {Avaliação do comportamento dos revestimentos de carbeto de tungstênio e carbeto de cromo via HVOF frente à fadiga térmica},
+  type          = {Trabalho de Conclusão de Curso (Graduação em Engenharia Mecânica)},
+  school        = {Universidade Federal do Pampa, Campus Alegrete},
+  address       = {Alegrete},
+  year          = {2018},
+  pages         = {61},
+  advisor       = {Ana Cláudia Costa de Oliveira},
+  url           = {http://dspace.unipampa.edu.br:8080/bitstream/riu/3713/1/Rafael%20Alves%20Courte%20s%20-%202018.pdf},
+  urlaccessdate = {26 fev. 2019}
+}
+
+% ARTIGO DE PERIÓDICO ONLINE COM DOI.
+% Use article. doi contém somente o identificador, sem o prefixo https://doi.org/,
+% porque o .bst atual acrescenta o endereço do resolvedor automaticamente.
+% Informe também journal, volume/número, páginas, data, URL e data de acesso.
+
+@article{dantas2014,
+  author        = {José Alves Dantas and others},
+  title         = {Regulação da auditoria em sistemas bancários: análise do cenário internacional e fatores determinantes},
+  journal       = {Revista Contabilidade \& Finanças},
+  address       = {São Paulo},
+  volume        = {25},
+  number        = {64},
+  pages         = {7--18},
+  month         = {jan./abr.},
+  year          = {2014},
+  doi           = {10.1590/S1519-70772014000100002},
+  url           = {http://www.scielo.br/scielo.php?script=sci_arttext&pid=S151970772014000100002&lng=en&nrm=iso},
+  urlaccessdate = {20 maio 2014}
+}
+
+% SOFTWARE / PROGRAMA DE COMPUTADOR DISPONÍVEL ONLINE.
+% Identifique responsável, título, versão, local se houver,
+% data e descrição do recurso. A URL deve apontar à versão/release utilizada.
+% As chaves duplas em author preservam a autoria coletiva como uma unidade.
+% misc é a implementação atual; note contém versão e tipo do recurso.
+% ATENÇÃO: a versão sai depois do ano no .bst atual; o manual a coloca após o título.
+% Este exemplo representa software, não substitui automaticamente a referência
+% à documentação, a uma base de dados ou a um artigo que descreva o software.
+@misc{software2026,
+  author        = {{Equipe do Projeto}},
+  title         = {Nome do software},
+  year          = {2026},
+  note          = {Versão 1.0. Software},
+  url           = {https://example.org/software},
+  urlaccessdate = {10 jul. 2026}
+}
+
+
+% ARTIGO DE PERIÓDICO SEM DOI E SEM ACESSO ONLINE INFORMADO.
+% Use article para artigo de revista científica; o campo journal identifica a revista.
+% Não invente DOI nem endereço eletrônico.
+% Se a consulta ocorreu online, acrescente url e urlaccessdate
+
+@article{ferreira2003,
+  author        = {Paulo Henrique de Oliveira Ferreira},
+  title         = {O jornalismo on line},
+  journal       = {Revista de Estudos de Jornalismo},
+  address       = {Campinas},
+  volume        = {6},
+  number        = {1},
+  pages         = {65--77},
+  month         = {jan./jun.},
+  year          = {2003}
+}
+
+% LIVRO COMPLETO DE UM AUTOR, COM NÚMERO DE EDIÇÃO.
+% Use book; edition recebe o número, sem escrever "ed." (ex.: edition = {7}).
+
+@book{gil2022,
+  author        = {Antonio Carlos Gil},
+  title         = {Como elaborar projetos de pesquisa},
+  edition       = {7},
+  address       = {São Paulo},
+  publisher     = {Atlas},
+  year          = {2022}
+}
+
+% LIVRO COMPLETO COM TRÊS AUTORES.
+% Separe os autores por "and"; não use vírgulas para separar autores diferentes.
+% Até três autores: informe todos.
+@book{hall2000,
+  author        = {Calvin S. Hall and Gardner Lindzey and John B. Campbell},
+  title         = {Teorias da personalidade},
+  edition       = {4},
+  address       = {Porto Alegre},
+  publisher     = {Artmed},
+  year          = {2000}
+}
+
+% TRABALHO EM ANAIS DE EVENTO, SEM URL INFORMADA.
+% Use inproceedings. 
+% ATENÇÃO: o título dos anais informa XXIV, mas conference-number está ausente.
+% Se a edição for confirmada como 24, preencha conference-number = {24}.
+% Confira também o nome oficial do evento e a grafia do título no documento original.
+@inproceedings{jonack2006,
+  author        = {Marco Antonio Jonack and Cristina Duarte Murta},
+  title         = {Limite de capacidade e proteção se servidores em redes gigabit},
+  organization = {Simpósio Brasileiro de Redes de Computadores},
+  conference-year = {2006},
+  conference-location = {Curitiba},
+  booktitle = {Anais do XXIV Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos (SBRC 2006)},
+  year          = {2006},
+  address       = {Curitiba},
+  publisher     = {Sociedade Brasileira de Computação},
+  pages         = {179--194}
+}
+
+% LIVRO COMPLETO DE UM AUTOR, SEM EDIÇÃO INFORMADA.
+% Modelo básico: autor, título, local, editora e ano.
+
+@book{lacerda1998,
+  author        = {Antonio Corrêa de Lacerda},
+  title         = {O impacto da globalização na economia brasileira},
+  address       = {São Paulo},
+  publisher     = {Contexto},
+  year          = {1998}
+}
+
+% LIVRO COMPLETO DE UM AUTOR: SEGUNDO EXEMPLO DO MODELO BÁSICO.
+% Possui a mesma estrutura de lacerda1998.
+% Pode servir para demonstrar citações múltiplas sem introduzir um novo tipo.
+
+@book{mariano2005,
+  author        = {Jefferson Mariano},
+  title         = {Introdução à economia brasileira},
+  address       = {São Paulo},
+  publisher     = {Saraiva},
+  year          = {2005}
+}
+
+% ARTIGO ONLINE COM DOI: SEGUNDO EXEMPLO, COM DADOS FICTÍCIOS.
+% Estrutura equivalente à de dantas2014.
+% O DOI 10.0000/exemplo.2025.001 e a URL example.org são demonstrativos.
+% Em trabalhos reais, substitua pelos dados efetivos; não reutilize este DOI.
+@article{artigo2025,
+  author        = {Carla Mendes and Paulo Ribeiro},
+  title         = {Tecnologias digitais no ensino superior},
+  journal       = {Revista Brasileira de Educação},
+  address       = {Rio de Janeiro},
+  volume        = {30},
+  number        = {1},
+  pages         = {1--18},
+  year          = {2025},
+  doi           = {10.0000/exemplo.2025.001},
+  url           = {https://example.org/artigo},
+  urlaccessdate = {10 jul. 2026}
+}
+
+% DISSERTAÇÃO DE MESTRADO, SEM ACESSO ONLINE INFORMADO.
+% Use mastersthesis e informe a descrição completa do trabalho em type.
+% advisor é um campo do nosso estilo; substitua o marcador.
+% Para uma dissertação de repositório, acrescente url e urlaccessdate.
+
+@mastersthesis{dissertacao2023,
+  author        = {Marina Oliveira},
+  title         = {Formação docente e recursos digitais},
+  advisor       = {Nome do orientador},
+  school        = {Universidade Federal do Pampa, Campus Jaguarão},
+  type          = {Dissertação (Mestrado em Educação)},
+  address       = {Jaguarão},
+  year          = {2023},
+  pages         = {120}
+}
+
+% LIVRO COMPLETO COM TÍTULO E SUBTÍTULO EM CAMPOS SEPARADOS.
+% Use title para o título e subtitle para o subtítulo, sem inserir dois-pontos no final.
+
+@book{ruiz2008,
+  author        = {João Álvaro Ruiz},
+  title         = {Metodologia científica},
+  subtitle = {guia para eficiência nos estudos},
+  edition       = {6},
+  address       = {São Paulo},
+  publisher     = {Atlas},
+  year          = {2008}
+}
+
+% TRABALHO EM ANAIS ONLINE, COM ET AL. E EDITORA NÃO IDENTIFICADA.
+% Use "and others" para a abreviação de autoria e [s.n.] quando a editora não
+% puder ser identificada. Informe páginas ou outro localizador, se disponíveis.
+% A ausência de páginas no exemplo não significa que se deva omiti-las sempre.
+@inproceedings{silva2012,
+  author        = {V. B. Silva and others},
+  title         = {Possibilidades de atividades colaborativas e cooperativas entre bibliotecários e gestores da informação em práticas profissionais de armazenamento, organização, fluxo e recuperação da informação},
+  organization = {Encontro Regional de Estudantes de Biblioteconomia, Documentação, Ciência e Gestão da Informação -- EREBD},
+  conference-number = {15},
+  conference-year = {2012},
+  conference-location = {Juazeiro do Norte},
+  booktitle = {Anais \ldots},
+  year          = {2012},
+  address       = {Juazeiro do Norte, CE},
+  publisher = {\textit{[s.n.]}},
+  url           = {http://portaldeperiodicos.eci.ufmg.br/index.php/moci/article/view/2098/1300},
+  urlaccessdate = {17 jul. 2018}
+}
+
+% LIVRO EM SUPORTE ELETRÔNICO FÍSICO: CD-ROM.
+% Use book e descreva o suporte em note. Não é necessário inventar URL.
+
+@book{simoes2009,
+  author        = {Carlos Simões},
+  title         = {Curso de direito do serviço social},
+  address       = {São Paulo},
+  publisher     = {Cortez},
+  year          = {2009},
+  note          = {1 CD-ROM}
+}
+
+% CAPÍTULO DE LIVRO COM DOIS AUTORES E UMA EDITORA RESPONSÁVEL PELA OBRA.
+% Mesmo tipo de cassol2003; varia a quantidade de autores.
+% editor identifica a pessoa responsável pela obra; publisher é a editora comercial.
+% Se Ana Lima for organizadora, e não editora, informe editortype = {Org.}.
+@incollection{capitulo2024,
+  author        = {Maria Souza and João Pereira},
+  title         = {Métodos de análise em pesquisas educacionais},
+  booktitle     = {Pesquisa e inovação na universidade},
+  editor        = {Ana Lima},
+  address       = {Porto Alegre},
+  publisher     = {Editora Acadêmica},
+  year          = {2024},
+  pages         = {45--68}
+}
+
+% MANUAL INSTITUCIONAL CONSULTADO ONLINE, COM AUTORIA DE ENTIDADE.
+% Prefira a URL específica do documento em lugar da página geral de normalização.
+
+@misc{unipampa2025manual,
+  organization  = {Universidade Federal do Pampa},
+  title         = {Manual de normalização de trabalhos acadêmicos},
+  edition       = {3},
+  address       = {Bagé},
+  publisher     = {Universidade Federal do Pampa},
+  year          = {2025},
+  url           = {https://sites.unipampa.edu.br/sisbi/normalizacao/},
+  urlaccessdate = {10 jul. 2026}
+}
+

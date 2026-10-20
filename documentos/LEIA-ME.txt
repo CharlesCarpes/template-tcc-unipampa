@@ -1,0 +1,7 @@
+Coloque nesta pasta:
+
+1. ficha-catalografica.pdf
+   Página gerada no Sistema GURI. Será inserida após a folha de rosto e não será contada.
+
+2. folha-aprovacao-assinada.pdf (opcional)
+   Página assinada após a defesa. Habilite o comando correspondente em dados.tex.
